@@ -15,7 +15,9 @@ import {
   CircularProgress,
   Button,
   Card,
-  CardContent
+  CardContent,
+  Avatar,
+  TextField
 } from '@mui/material';
 
 const theme = createTheme();
@@ -26,13 +28,14 @@ function MaterialUIPage() {
   const [rating, setRating] = React.useState(2);
   const [customRating, setCustomRating] = React.useState(3);
   const [progress, setProgress] = React.useState(0);
+  const [profession, setProfession] = React.useState('');
 
   const rows = [
-    { name: 'John Doe', age: 30, city: 'New York' },
-    { name: 'Jane Smith', age: 25, city: 'Los Angeles' },
-    { name: 'Bob Johnson', age: 35, city: 'Chicago' },
-    { name: 'Alice Brown', age: 28, city: 'Houston' },
-    { name: 'Charlie Davis', age: 42, city: 'Phoenix' },
+    { name: 'John Doe', age: 30, city: 'New York', avatar: '/path/to/avatar1.jpg' },
+    { name: 'Jane Smith', age: 25, city: 'Los Angeles', avatar: '/path/to/avatar2.jpg' },
+    { name: 'Bob Johnson', age: 35, city: 'Chicago', avatar: '/path/to/avatar3.jpg' },
+    { name: 'Alice Brown', age: 28, city: 'Houston', avatar: '/path/to/avatar4.jpg' },
+    { name: 'Charlie Davis', age: 42, city: 'Phoenix', avatar: '/path/to/avatar5.jpg' },
   ];
 
   const handleChangePage = (event, newPage) => {
@@ -42,6 +45,10 @@ function MaterialUIPage() {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
+  };
+
+  const handleProfessionChange = (event) => {
+    setProfession(event.target.value);
   };
 
   React.useEffect(() => {
@@ -96,9 +103,23 @@ function MaterialUIPage() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ maxWidth: 800, margin: 'auto', padding: 2 }}>
-        <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', mb: 4 }}>
+        <Typography variant="h4" sx={{ textAlign: 'center', mb: 4 }}>
           Material UI Components
         </Typography>
+
+        {/* Input for Profession */}
+        <Card sx={{ mb: 4 }}>
+          <CardContent>
+            <Typography variant="h6" >aaditya</Typography>
+            <TextField
+              label="Profession"
+              variant="outlined"
+              fullWidth
+              value={profession}
+              onChange={handleProfessionChange}
+            />
+          </CardContent>
+        </Card>
 
         {/* Rating */}
         <Card sx={{ mb: 4 }}>
@@ -155,7 +176,10 @@ function MaterialUIPage() {
                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                     <TableRow key={row.name}>
                       <TableCell component="th" scope="row">
-                        {row.name}
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <Avatar alt={row.name} src={row.avatar} sx={{ mr: 2 }} />
+                          {row.name}
+                        </Box>
                       </TableCell>
                       <TableCell align="right">{row.age}</TableCell>
                       <TableCell align="right">{row.city}</TableCell>
@@ -196,7 +220,10 @@ function MaterialUIPage() {
                   {rows.map((row) => (
                     <StyledTableRow key={row.name}>
                       <StyledTableCell component="th" scope="row">
-                        {row.name}
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <Avatar alt={row.name} src={row.avatar} sx={{ mr: 2 }} />
+                          {row.name}
+                        </Box>
                       </StyledTableCell>
                       <StyledTableCell align="right">{row.age}</StyledTableCell>
                       <StyledTableCell align="right">{row.city}</StyledTableCell>
