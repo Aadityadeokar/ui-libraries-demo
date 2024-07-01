@@ -154,8 +154,21 @@ function FlowbitePage() {
             Hot Fix
           </span>
         </div>
-      </div>
+      </div> 
+      <div className="bg-cyan rounded-lg shadow-md p-6 mb-8">
+        <h2 className="text-2xl font-semibold mb-4">User Statistics</h2>
+        <p className="text-gray-600 mb-4">Statistics showing users Analytics feature.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="p-4 bg-cyan-400 rounded-lg text-center">
+            <h3 className="text-2xl font-bold text-white-900">1,234</h3>
+            <p className="text-gray-600">Active Users</p>
+          </div>
+          </div>
+          </div>
+      
     </div>
+
+    
   );
 }
 
