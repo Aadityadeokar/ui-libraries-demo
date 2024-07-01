@@ -123,7 +123,7 @@ function ShadcnPage() {
         {/* Custom Popover */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Custom Popover</h2>
-          <p className="text-gray-600 mb-4">A customized popover with a unique design for user profiles.</p>
+          <p className="text-black-600 mb-4">A customized popover with a unique design for user profiles.</p>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <Popover>
               <PopoverTrigger asChild>
@@ -193,10 +193,10 @@ function ShadcnPage() {
 
         {/* Custom Card */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Custom Card</h2>
-          <p className="text-gray-600 mb-4">A customized card component with a unique design for subscription plans.</p>
+          <h2 className="text-3xl font-semibold mb-4">Custom Card</h2>
+          <p className="text-red-600 mb-4">A customized card component with a unique design for subscription plans.</p>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <Card className="w-[350px] bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+            <Card className="w-[350px] bg-gradient-to-br from-yellow-500 to-blue-500 text-black">
               <CardHeader>
                 <CardTitle>Subscribe to Pro</CardTitle>
                 <CardDescription className="text-purple-100">Get access to exclusive features</CardDescription>
@@ -210,7 +210,7 @@ function ShadcnPage() {
                 </ul>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-purple-500">Learn More</Button>
+                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-cyan-500">Learn More</Button>
                 <Button className="bg-white text-purple-500 hover:bg-purple-100">Subscribe</Button>
               </CardFooter>
             </Card>
